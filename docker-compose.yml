@@ -1,6 +1,6 @@
 version: '3'
 services:
-  app:
+  app: &app
     build:
       context: .
       dockerfile: Dockerfile
@@ -15,6 +15,13 @@ services:
       - ./:/srv/demo-app
     networks:
       - demo_network
+
+  workers:
+    <<: *app
+    ports: []
+    restart: unless-stopped
+    command: php artisan queue:work
+    scale: 1
 
   redis:
     image: redis:alpine
