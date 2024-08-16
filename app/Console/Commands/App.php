@@ -3,7 +3,8 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use App\Demo\Runner;
+use Workflow\WorkflowStub;
+use App\Workflows\MyWorkflow;
 
 class App extends Command
 {
@@ -26,7 +27,7 @@ class App extends Command
      */
     public function handle()
     {
-        $runner = new Runner;
-        $runner->execute();
+        $workflow = WorkflowStub::make(MyWorkflow::class);
+        $workflow->start();
     }
 }
