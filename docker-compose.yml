@@ -21,7 +21,7 @@ services:
     ports: []
     restart: unless-stopped
     command: php artisan queue:work
-    scale: 1
+    scale: 3
 
   redis:
     image: redis:alpine
