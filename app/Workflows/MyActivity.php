@@ -7,13 +7,13 @@ use Illuminate\Support\Facades\Log;
 
 class MyActivity extends Activity
 {
-    public function execute()
+    public function execute($args)
     {
         Log::info("MyActivity executed");
 
-        sleep(10);
+        sleep(1);
 
-        $result = 'Hello, World!';
+        $result = $args;
         return $result;
     }
 }
