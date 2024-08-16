@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 use Workflow\WorkflowStub;
 use App\Workflows\SerialWorkflow;
 
-class Parallel extends Command
+class Serial extends Command
 {
   /**
    * The name and signature of the console command.
